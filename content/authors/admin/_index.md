@@ -29,9 +29,10 @@ bio: Trader by day and hobby mathematician when I find the time
 
 # Interests to show in About widget
 interests:
-  - Mathematical models especially for finance and stochastics
+  - Mathematical Modelling
   - Computational Mathematics
   - Numerical Algorithms
+  - Financial Mathematics
 
 # Education to show in About widget
 education:
