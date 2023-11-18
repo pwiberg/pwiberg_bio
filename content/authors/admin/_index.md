@@ -29,9 +29,9 @@ bio: My research interests include distributed robotics, mobile computing and pr
 
 # Interests to show in About widget
 interests:
-  - Hello
-  - Computational Linguistics
-  - Information Retrieval
+  - Mathematical models especially for finance and stochastics
+  - Computational Mathematics
+  - Numerical Algorithms
 
 # Education to show in About widget
 education:
