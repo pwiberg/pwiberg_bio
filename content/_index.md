@@ -80,8 +80,8 @@ sections:
           # ompany_url: ''
           # company_logo: org-x
           location: London
-          date_start: '2004-04-01' # check
-          date_end: '2013-04-31'.  # check
+          date_start: '2004-04-01'
+          date_end: '2013-04-31'
           description: Equity vol and structured notes with a short stint in commodities
     design:
       columns: '2'
