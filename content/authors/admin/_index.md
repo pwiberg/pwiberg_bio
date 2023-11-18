@@ -36,9 +36,6 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: EPSRC Post-doc
-      institution: Mathematics Institute, University of Warwick
-      year: 2002-2004
     - course: PhD in Computer Science
       institution: University of Toronto
       year: 2002
