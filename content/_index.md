@@ -75,14 +75,14 @@ sections:
               * Delta One Derivatives
               * Equity Finance
               * Prime Brokerage
-        - title: Professor of Semiconductor Physics
-          company: University X
-          company_url: ''
-          company_logo: org-x
-          location: California
+        - title: Strategist/quant
+          company: Goldman Sachs
+          # ompany_url: ''
+          # company_logo: org-x
+          location: London
           date_start: '2016-01-01'
           date_end: '2020-12-31'
-          description: Taught electronic engineering and researched semiconductor physics.
+          description: Equity vol and structured notes with a short stint in commodities
     design:
       columns: '2'
   - block: accomplishments
