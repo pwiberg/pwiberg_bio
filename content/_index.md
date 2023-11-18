@@ -75,13 +75,13 @@ sections:
               * Delta One Derivatives
               * Equity Finance
               * Prime Brokerage
-        - title: Strategist/quant
+        - title: Strategist / Quant
           company: Goldman Sachs
           # ompany_url: ''
           # company_logo: org-x
           location: London
-          date_start: '2016-01-01'
-          date_end: '2020-12-31'
+          date_start: '2004-04-01' # check
+          date_end: '2013-04-31'.  # check
           description: Equity vol and structured notes with a short stint in commodities
     design:
       columns: '2'
