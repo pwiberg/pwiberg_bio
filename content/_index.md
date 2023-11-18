@@ -72,9 +72,9 @@ sections:
           description: |2-
               Responsibilities include:
 
-              * Analysing
-              * Modelling
-              * Deploying
+              * Delta One Derivatives
+              * Equity Finance
+              * Prime Brokerage
         - title: Professor of Semiconductor Physics
           company: University X
           company_url: ''
