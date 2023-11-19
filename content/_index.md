@@ -91,7 +91,7 @@ sections:
           date_start: '2002-11-01'
           date_end: '2004-04-30'
           description: |2-
-              Applied mathematics reseach and lecturing            
+              Applied mathematics research and lecturing            
     design:
       columns: '2'
   - block: accomplishments
