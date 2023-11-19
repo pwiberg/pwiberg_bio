@@ -65,7 +65,7 @@ sections:
         - title: Head of Canadian Prime Finance
           company: BMO
           # company_url: ''
-          company_logo: bmo_capital_markets
+          company_logo: bmo_capital_markets_logo
           # location: California
           date_start: '2013-05-01'
           date_end: ''
