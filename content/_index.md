@@ -81,7 +81,7 @@ sections:
           # company_logo: bmo_capital_markets_logo
           # location: California
           date_start: '2004-05-01'
-          date_end: '2013-04-31'
+          date_end: '2013-04-30'
           description: |2-
               Equity vol, structured notes and convertibles
     design:
