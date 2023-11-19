@@ -70,11 +70,10 @@ sections:
           date_start: '2013-05-01'
           date_end: ''
           description: |2-
-              Responsibilities include:
-
               * Delta One Derivatives
               * Equity Finance
               * Prime Brokerage
+              * Structured margin lending
         - title: Quant / Strategist
           company: Goldman Sachs
           # company_url: ''
@@ -84,6 +83,15 @@ sections:
           date_end: '2013-04-30'
           description: |2-
               Equity vol, structured notes and convertibles
+        - title: Post-doc
+          company: Mathematics Institute, University of Warwick
+          # company_url: ''
+          # company_logo: bmo_capital_markets_logo
+          # location: California
+          date_start: '2002-11-01'
+          date_end: '2004-04-30'
+          description: |2-
+              Applied mathematics reseach and lecturing            
     design:
       columns: '2'
   - block: accomplishments
