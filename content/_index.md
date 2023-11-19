@@ -73,7 +73,7 @@ sections:
               * Delta One Derivatives
               * Equity Finance
               * Prime Brokerage
-              * Structured margin lending
+              * Structured Margin Lending
         - title: Quant / Strategist
           company: Goldman Sachs
           # company_url: ''
