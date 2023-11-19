@@ -109,7 +109,7 @@ sections:
       items:
         - certificate_url: https://caims.ca/award/cecil-graham-doctoral-dissertation-award/
           date_end: ''
-          date_start: '2022-10-01'
+          date_start: '2002-10-01'
           description: ''
           organization: CAIMS
           title: Cecil Graham Doctoral Dissertation Award
