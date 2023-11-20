@@ -24,10 +24,9 @@ organizations:
   - name: Bank of Montreal
     url: https://www.bmo.com/
 
-# Short bio (displayed in user profile at end of posts)
-bio: Trader by day and hobby mathematician when I find the time
+# Short bio (displayed in the user profile at the end of posts)
+bio: Trader interested in math and computing
 
-# Interests to show in About widget
 interests:
   - Mathematical Modelling
   - Computational Mathematics
