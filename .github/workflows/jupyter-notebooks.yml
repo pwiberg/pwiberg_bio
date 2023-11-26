@@ -1,0 +1,93 @@
+# Workflow for checking notebooks in fdm-devito-notebooks are compiling using nbval
+name: Jupyter Notebooks
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  tutorials:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+
+    env:
+      DEVITO_ARCH: "${{ matrix.compiler }}"
+      DEVITO_LANGUAGE: ${{ matrix.language }}
+      DEVITO_BACKEND: "core"
+      PYTHON_VERSION: "3.9"
+      RUN_CMD: ""
+
+    strategy:
+      # Prevent all build to stop if a single one fails
+      fail-fast: false
+      matrix:
+        name: [tutos-ubuntu-gcc-py39,
+          tutos-osx-gcc-py39,
+          tutos-osx-clang-py39]
+
+        include:
+          - name: tutos-ubuntu-gcc-py39
+            os: ubuntu-latest
+            compiler: gcc-9
+            language: "openmp"
+
+          - name: tutos-osx-gcc-py39
+            os: macos-latest
+            compiler: gcc-9
+            language: "openmp"
+
+          - name: tutos-osx-clang-py39
+            os: macos-latest
+            compiler: clang
+            language: "C"
+
+    steps:
+    - name: Checkout devito_book
+      uses: actions/checkout@v1
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.9
+
+    - name: Install compilers for OSX
+      if: runner.os == 'macOS'
+      run: |
+        if [ "${{ matrix.compiler }}" = "gcc-9" ]; then
+          brew install gcc
+        else
+          sudo xcode-select -s /Applications/Xcode_11.app/Contents/Developer
+        fi
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .
+        pip install matplotlib
+        pip install --user git+https://github.com/devitocodes/devito.git
+    - name: Vibration ODE notebooks (1.1 to 1.8)
+      run: |
+        $RUN_CMD python -m pytest -W ignore::DeprecationWarning --nbval --cov . --cov-config=.coveragerc --cov-report=xml:vib_coverage.xml $SKIP fdm-devito-notebooks/01_vib/vib_undamped.ipynb  
+    - name: Waves notebooks (2.1 and 2.2)
+      run: |
+        $RUN_CMD python -m pytest -W ignore::DeprecationWarning --nbval --cov . --cov-config=.coveragerc --cov-report=xml:waves_coverage.xml $SKIP fdm-devito-notebooks/02_wave/wave1D_fd1.ipynb
+    - name: Waves notebooks (2.3 to 2.5)
+      run: |
+        $RUN_CMD python -m pytest -W ignore::DeprecationWarning --nbval --cov . --cov-config=.coveragerc --cov-report=xml:waves_coverage.xml $SKIP fdm-devito-notebooks/02_wave/wave1D_prog.ipynb
+    - name: Diffusion notebooks (3.7)
+      run: |
+        $RUN_CMD python -m pytest -W ignore::DeprecationWarning --nbval --cov . --cov-config=.coveragerc --cov-report=xml:diffu_coverage.xml $SKIP fdm-devito-notebooks/03_diffu/diffu_rw.ipynb
+    - name: Advection notebook (4)
+      run: |
+        $RUN_CMD python -m pytest -W ignore::DeprecationWarning --nbval --cov . --cov-config=.coveragerc --cov-report=xml:advec_coverage.xml $SKIP fdm-devito-notebooks/04_advec/advec.ipynb
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1.0.6
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        name: ${{ matrix.name }}
+        file: ./*_coverage.xml
