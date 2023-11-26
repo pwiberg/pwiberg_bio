@@ -1,10 +1,7 @@
 ---
 title: Nagel-Schrekenberg Traffic Model
 date: '2023-11-04'
-summary: Easily blog from Jupyter notebooks!
 ---
-
-# Nagel−Schreckenberg Traffic Model
 
 The Nagel-Schreckenberg model is a discrete model of traffic congestion. 
 The model divides a circular road into $M$ road segments. There are $N$ cars on it, and each segment can contain only one car at any time. The speeds of the cars are non-negative integers $0 \leq v_i(t) \leq v_{max}$.
@@ -121,6 +118,6 @@ plt.ylabel('Time')
 
 
     
-![png](%20NagelSchreckenberg_files/%20NagelSchreckenberg_7_1.png)
+![png](NagelSchreckenberg_7_1.png)
     
 
